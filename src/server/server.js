@@ -24,7 +24,6 @@ const InputError = require('../exceptions/InputError');
     server.ext('onPreResponse', function (request, h) {
         const response = request.response;
 
-        // Respon Limit size File
         if (response.isBoom && response.output.statusCode === 413) {
             const newResponse = h.response({
                 status: 'fail',
